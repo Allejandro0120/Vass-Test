@@ -1,28 +1,76 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="white"
+      dark
+      height="100vh"
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Principal Logo"
+          class="shrink mr-1"
+          contain
+          src="@/assets/sneak_logo.png"
+          transition="scale-transition"
+          width="40"
+        />
+        <v-img
+          alt="Principal Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="@/assets/sneak_text.png"
+          width="150"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+      <v-row>
+        <v-col class="d-flex justify-end">
+          <v-btn
+            href="#"
+            text
+            color="rgba(252,117,140)"
+          >
+            <span class="mr-2">Inicio</span>
+          </v-btn>
+          <v-btn
+            href="#"
+            text
+            color="rgba(252,117,140)"
+          >
+            <span class="mr-2">Noticias</span>
+          </v-btn>
+          <v-btn
+            href="#"
+            text
+            color="rgba(252,117,140)"
+          >
+            <span class="mr-2">Contacto</span>
+          </v-btn>
+        </v-col>  
+      </v-row>
+    </v-app-bar>
+
+    <v-main>
+      <Home/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    Home,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
